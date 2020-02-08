@@ -1,0 +1,91 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+:root,body{
+    height: 100%;
+    width: 100%;
+    font-family: Microsoft YaHei,SimHei,Tahoma!important;
+}
+
+.login-content{
+    /* position: absolute; */
+    width: 100%;
+    height: 100%;
+    background: url(../Img/bg2.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    transition: .8s;
+    min-width: 1200px;
+    min-height: 700px;
+}
+.login-content:hover{
+    background-size: 103% 103%;
+    background-position: -35px -15px;
+}
+.login-content .nav{
+    height: 50px;
+}
+.login-content .nav span{
+    font-size: 26px;
+    color: white;
+    line-height: 50px;
+    margin-left: 25px;
+    font-weight: 600;
+}
+.login-content .login-wrapper{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    right: 100px;
+    box-shadow: 2px 2px 5px #222;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: white;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.login-content .login-wrapper .content{
+    width:250px;
+    /* height: ; */
+    margin: auto;
+    /* text-align: center; */
+}
+.login-content .login-wrapper .content p{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.login-content .login-wrapper .content input{
+    /* margin-bottom: 30px; */
+    width: 100%;
+    height: 45px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    outline: none;
+    box-sizing: border-box;
+    color: #666;
+    font-size: 16px;
+}
+.login-content .login-wrapper .content input#userId{
+    border-bottom: none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.login-content .login-wrapper .content input#userPass{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-bottom: 30px;
+}
+.login-content .login-wrapper .content input[type='submit']{
+    background-color: #09aaff;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    padding: 0;
+    cursor: pointer;
+}
+.login-content .login-wrapper .content input[type='submit']:hover{
+    opacity: 0.8;
+}
