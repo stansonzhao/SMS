@@ -322,7 +322,7 @@ function discern() {
         prevBtn.style.display = 'none';
         nextBtn.style.display = 'inline-block'
     }
-    n.innerText = `当前是第${nowPage}页，共${totalPage}页`;
+    n.innerText = `${nowPage} / ${totalPage}`;
 }
 
 function appedToTbody(data) {
