@@ -275,13 +275,13 @@ console.log(str);
 searchBtn.onclick = function (e) {
     // e.preventDefalut();
     // console.log(e)
+    snum = sform.searchSex.value;
+    str = sform.search.value;
     search();
     return false
 }
 
 function search() {
-    snum = sform.searchSex.value;
-    str = sform.search.value;
     str = str.trim()
     if (str == '' || str == ' ') {
         alert('搜索关键字不能为空')
@@ -318,7 +318,7 @@ function discern() {
     if(nowPage == totalPage){
         nextBtn.style.display = 'none';
     }
-    if(nowPage == 1 ){
+    if(nowPage == 1 && totalPage != 1 ){
         prevBtn.style.display = 'none';
         nextBtn.style.display = 'inline-block'
     }
@@ -370,6 +370,7 @@ nextBtn.onclick = function () {
     page += 1;
     nowPage += 1;
     page >= totalPage ? totalPage : page;
+    console.log(str)
     // findFenYe();
     str == '' ? findFenYe() : search()
     // discern();
