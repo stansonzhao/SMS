@@ -24,13 +24,39 @@
             </div>
             <div class="right-content">
                 <div class="studentList">
+                    <div class="search">
+                        <form class="sform">
+                            <div class="s">
+                                <span>性别：</span>
+                                <label>
+                                    <span>不限</span>
+                                    <input type="radio" name="searchSex" value="-1" checked>
+                                    <span class="niu"></span>
+                                </label>
+                                <label>
+                                    <span>男</span>
+                                    <input type="radio" name="searchSex" value="0">
+                                    <span class="niu"></span>
+                                </label>
+                                <label>
+                                    <span>女</span>
+                                    <input type="radio" name="searchSex" value="1">
+                                    <span class="niu"></span>
+                                </label>
+                            </div>
+                            <div class="i">
+                                <input type="text" name="search" placeholder="允许使用邮箱、学生学号和地址查询">
+                                <button class="searchBtn">搜索</button>
+                            </div>
+                        </form>
+                    </div>
                     <table rules='all'>
                         <thead>
                             <tr>
                                 <th>学号</th>
                                 <th>姓名</th>
                                 <th>性别</th>
-                                <th>出生年份</th>
+                                <th>年龄</th>
                                 <th>邮箱</th>
                                 <th>手机号</th>
                                 <th>家庭住址</th>
@@ -41,6 +67,13 @@
                             
                         </tbody>
                     </table>
+                    <div class="fenye">
+                        <p>
+                            <button class="prevBtn">上一页</button>
+                            <span class="n">共1页</span>
+                            <button class="nextBtn">下一页</button>
+                        </p>
+                    </div>
                     <div class="edit-wrapper">
                         <div class="modle"></div>
                         <div class="editInfo">
@@ -66,7 +99,7 @@
                                 </p>
                                 <p>
                                     <label>
-                                        出生年月<input type="text" class="editbirth">
+                                        出生年份<input type="text" class="editbirth">
                                     </label>
                                 </p>
                                 <p>
