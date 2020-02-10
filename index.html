@@ -77,29 +77,29 @@
                     <div class="edit-wrapper">
                         <div class="modle"></div>
                         <div class="editInfo">
-                            <form action="">
+                            <form class="editForm">
                                 <h3>编辑表单</h3>
                                 <p>
                                     <label>
-                                        学号<input type="text" class="editnum" disabled>
+                                        学号<input type="text" class="editnum" name="editsNo" disabled>
                                     </label>
                                 </p>
                                 <p>
                                     <label>
-                                        姓名<input type="text" placeholder="学生姓名" class="editname">
+                                        姓名<input type="text" placeholder="学生姓名" name='editname' class="editname">
                                     </label>
                                 </p>
                                 <p class="e">
                                     性别<label>
-                                        <input type="radio" name="sex" value="0" class="editsex" checked>男
+                                        <input type="radio" name="sex" id="M" value="0" class="editsexM" checked>男
                                     </label>
                                     <label>
-                                        <input type="radio" name="sex" value="1" class="editsex">女
+                                        <input type="radio" name="sex" id="F" value="1" class="editsexF">女
                                     </label>
                                 </p>
                                 <p>
                                     <label>
-                                        出生年份<input type="text" class="editbirth">
+                                        出生年份<input type="text" class="editbirth" name='editbirth'>
                                     </label>
                                 </p>
                                 <p>
@@ -109,12 +109,12 @@
                                 </p>
                                 <p>
                                     <label>
-                                        联系电话<input type="Tel" class="editphone">
+                                        联系电话<input type="Tel" class="editphone" name='editphone'>
                                     </label>
                                 </p>
                                 <p>
                                     <label>
-                                        住址<input type="text" class="editaddress">
+                                        住址<input type="text" class="editaddress" name='editaddress'>
                                     </label>
                                 </p>
                                 <p class="editbuttom">
@@ -127,15 +127,15 @@
 
                 <div class="addInfo">
                     <div class="info-content">
-                        <form >
+                        <form class="addForm">
                             <p>
                                 <label>
-                                    学号<input type="text" placeholder="四位及以上示列：0001" class="num">
+                                    学号<input type="text" placeholder="四位及以上示列：0001" class="num" name="sNo">
                                 </label>
                             </p>
                             <p>
                                 <label>
-                                    姓名<input type="text" placeholder="学生姓名" class="name">
+                                    姓名<input type="text" placeholder="学生姓名" class="name" name="name">
                                 </label>
                             </p>
                             <p class="t">
@@ -148,7 +148,7 @@
                             </p>
                             <p>
                                 <label>
-                                    出生年份<input type="text" class="birth" placeholder="示例：1999">
+                                    出生年份<input type="text" class="birth" placeholder="示例：1999" name="birth">
                                 </label>
                             </p>
                             <p>
@@ -158,12 +158,12 @@
                             </p>
                             <p>
                                 <label>
-                                    联系电话<input type="Tel" class="phone">
+                                    联系电话<input type="Tel" class="phone" name="phone">
                                 </label>
                             </p>
                             <p>
                                 <label>
-                                    住址<input type="text" class="address">
+                                    住址<input type="text" class="address" name="address">
                                 </label>
                             </p>
                             <p class="buttom">
