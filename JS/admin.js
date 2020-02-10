@@ -29,7 +29,7 @@ function send(urlA, data, callback) {
         data: data,
     }).then(function (res) {
         res = JSON.parse(res);
-        if(res.status == 'fail' && res.msg.includes('10000') !=-1){
+        if(res.status == 'fail' && res.msg.includes('10000')){
             alert('后台访问'+res.msg+'无法获取数据');
             return;
         }
