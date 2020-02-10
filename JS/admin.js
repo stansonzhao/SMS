@@ -248,6 +248,10 @@ function findFenYe() {
         size: size
     }
     send('api/student/findByPage', obj, function (res) {
+        if(res.status == 'fail' && res.msg.includes('1000')){
+            console.log(res.msg);
+            return
+        }
         totalPage = Math.ceil(res.data.cont / size);
         discern();
         appedToTbody(res.data.findByPage);
