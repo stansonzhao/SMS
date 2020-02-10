@@ -31,7 +31,7 @@ function send(urlA, data, callback) {
     }).then(function (res) {
         res = JSON.parse(res);
         if (res.status == 'fail' && res.msg.includes('10000')) {
-            // alert('后台访问' + res.msg + '获取数据失败')
+            alert('后台访问' + res.msg + '获取数据失败')
             fenye.style.display = 'none';
             return
         } else {
