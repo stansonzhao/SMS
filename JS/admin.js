@@ -93,6 +93,20 @@ function findSex(sexs) {
 
 function add() {
     var obj = {};
+    obj.sNo = addForm.sNo.value;
+    obj.birth = addForm.birth.value;
+    obj.phone = addForm.phone.value;
+    obj.name = addForm.name.value;
+    obj.sex = addForm.sex.value;
+    obj.address = addForm.address.value;
+    obj.email = addForm.email.value;
+    for(var prop in obj){
+        obj[prop] = obj[prop].trim();
+        if(obj[prop] == ''){
+            alert('参数不能留空')
+            return
+        }
+    }
     if (!(/^\d{4}$/.test(addForm.birth.value))) {
         alert('出生年份不合规,仅需填写四位年份');
         return
@@ -108,20 +122,6 @@ function add() {
     if (!(/\w+@\w+\.com/.test(addForm.email.value))) {
         alert('邮箱信息不合规范');
         return
-    }
-    obj.sNo = addForm.sNo.value;
-    obj.birth = addForm.birth.value;
-    obj.phone = addForm.phone.value;
-    obj.name = addForm.name.value;
-    obj.sex = addForm.sex.value;
-    obj.address = addForm.address.value;
-    obj.email = addForm.email.value;
-    for(var prop in obj){
-        obj[prop] = obj[prop].trim();
-        if(obj[prop] == ''){
-            alert('参数不能留空')
-            return
-        }
     }
     send('api/student/addStudent', obj, function (res) {
         if (res.status == 'fail') {
