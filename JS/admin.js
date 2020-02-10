@@ -112,6 +112,12 @@ function add() {
     obj.sex = addForm.sex.value;
     obj.address = addForm.address.value;
     obj.email = addForm.email.value;
+    for(var prop in obj){
+        if(obj[prop] == ''){
+            alert('参数不能留空')
+            return
+        }
+    }
     send('api/student/addStudent', obj, function (res) {
         if (res.status == 'fail') {
             alert('添加失败,' + res.msg)
@@ -124,13 +130,6 @@ function add() {
     })
 }
 submit.onclick = function () {
-    addValueObj.sex = findSex(sex);
-    for (var prop in addValueObj) {
-        if (addValueObj[prop].value == '') {
-            alert('参数不能留空')
-            return
-        }
-    }
     add();
 }
 
