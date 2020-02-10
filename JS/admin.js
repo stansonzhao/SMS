@@ -29,6 +29,10 @@ function send(urlA, data, callback) {
         data: data,
     }).then(function (res) {
         res = JSON.parse(res);
+        if(res.status == 'fail' && res.msg.includes('10000') !=-1){
+            alert('后台访问'+res.msg+'无法获取数据');
+            return;
+        }
         callback && callback(res);
     })
 }
@@ -113,6 +117,7 @@ function add() {
     obj.address = addForm.address.value;
     obj.email = addForm.email.value;
     for(var prop in obj){
+        obj[prop] = obj[prop].trim();
         if(obj[prop] == ''){
             alert('参数不能留空')
             return
@@ -192,10 +197,6 @@ function search() {
         size: size
     }
     send('api/student/searchStudent', obj, function (res) {
-        if(res.status == 'fail'){
-            alert('后台访问'+res.msg+'无法获取数据')
-            return;
-        }
         totalPage = Math.ceil(res.data.cont / size);
         discern()
         appedToTbody(res.data.searchList);
@@ -247,10 +248,6 @@ function findFenYe() {
         size: size
     }
     send('api/student/findByPage', obj, function (res) {
-        if(res.status == 'fail'){
-            alert('后台访问'+res.msg+'无法获取数据')
-            return;
-        }
         totalPage = Math.ceil(res.data.cont / size);
         discern();
         appedToTbody(res.data.findByPage);
