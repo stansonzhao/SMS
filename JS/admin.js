@@ -13,6 +13,7 @@ var editForm = document.getElementsByClassName('editForm')[0];
 var sform = document.getElementsByClassName('sform')[0];
 var searchBtn = document.getElementsByClassName('searchBtn')[0];
 var addForm = document.getElementsByClassName('addForm')[0];
+var fenye = document.getElementsByClassName('fenye')[0];
 var snum = '';
 var str = '';
 var page = 1;
@@ -29,11 +30,14 @@ function send(urlA, data, callback) {
         data: data,
     }).then(function (res) {
         res = JSON.parse(res);
-        if(res.status == 'fail' && res.msg.includes('10000')){
-            alert('后台访问'+res.msg+'无法获取数据');
-            return;
+        if (res.status == 'fail' && res.msg.includes('10000')) {
+            // alert('后台访问' + res.msg + '获取数据失败')
+            fenye.style.display = 'none';
+            return
+        } else {
+            fenye.style.display = 'block';
+            callback && callback(res);
         }
-        callback && callback(res);
     })
 }
 dds[0].onclick = function () {
@@ -197,6 +201,10 @@ function search() {
         size: size
     }
     send('api/student/searchStudent', obj, function (res) {
+        if(res.status == 'fail'){
+            alert('搜索失败'+res.msg);
+            return;
+        }
         totalPage = Math.ceil(res.data.cont / size);
         discern()
         appedToTbody(res.data.searchList);
