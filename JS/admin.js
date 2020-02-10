@@ -193,6 +193,10 @@ function search() {
         size: size
     }
     send('api/student/searchStudent', obj, function (res) {
+        if(res.status == 'fail'){
+            alert('今日后台访问'+res.msg+'无法获取数据')
+            return;
+        }
         totalPage = Math.ceil(res.data.cont / size);
         discern()
         appedToTbody(res.data.searchList);
@@ -245,7 +249,7 @@ function findFenYe() {
     }
     send('api/student/findByPage', obj, function (res) {
         if(res.status == 'fail'){
-            alert(res.msg)
+            alert('今日后台访问'+res.msg+'无法获取数据')
             return;
         }
         totalPage = Math.ceil(res.data.cont / size);
