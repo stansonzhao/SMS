@@ -79,7 +79,8 @@ function remove(target) {
         // console.log(res);
         if (res.status == 'success') {
             target.parentElement.parentElement.remove();
-            findAll();
+            // findAll();
+            findFenYe()
         }
     })
 }
@@ -136,7 +137,8 @@ function add() {
             // console.log(1);
         } else if (res.status == 'success') {
             // dds[0].click();
-            findAll();
+            // findAll();
+            findFenYe()
             reset.click();
             alert('添加成功');
         }
@@ -222,7 +224,8 @@ function upLoadInfo() {
 }
 sub.onclick = function () {
     upLoadInfo();
-    findAll();
+    // findAll();
+    findFenYe();
 }
 // $.ajax({
 //     url: 'http://open.duyiedu.com/api/student/findAll',
