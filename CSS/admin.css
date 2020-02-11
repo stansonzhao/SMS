@@ -291,4 +291,13 @@ body {
 }
 .wrapper .content .right-content .fenye p button{
     cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: #0092e0;
+    padding: 5px 5px;
+    border-radius: 5px;
+    color: white;
+}
+.wrapper .content .right-content .fenye p button:hover{
+    background-color: #09aaff;
 }
